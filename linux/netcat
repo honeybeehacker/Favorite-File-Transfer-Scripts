@@ -1,0 +1,5 @@
+# on victim listen for incoming request and pipe to output file
+nc -nlvp 55555 > file
+
+# send the file from attack machine
+nc [victim IP] 55555 < file
