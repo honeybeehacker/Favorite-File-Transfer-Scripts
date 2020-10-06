@@ -1,0 +1,8 @@
+# on attack machine:
+cat [filename] | xclip
+
+# on victim machine:
+vim [filename[
+
+# save and exit:
+[esc] :wq
