@@ -1,0 +1,6 @@
+/tmp
+/dev/shm
+find / -type d \( -perm -g+w -or -perm -o+w \) -exec ls -adl {} \;
+
+# Windows:
+dir /a-r-d /s /b
